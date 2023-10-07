@@ -20,7 +20,7 @@ BaseRoom::BaseRoom(string name)
 
 BaseRoom* BaseRoom::checkAdjacent(CardinalDirection dir)
 {
-	if (dir >= 0 && dir<= 0 && roomConnections[dir] != nullptr)
+	if (dir >= 0 && dir <= 5 && roomConnections[dir] != nullptr)
 	{
 		return roomConnections[dir];
 	}

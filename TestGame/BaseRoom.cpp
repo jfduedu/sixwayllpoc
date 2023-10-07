@@ -27,11 +27,24 @@ BaseRoom* BaseRoom::checkAdjacent(CardinalDirection dir)
 	return nullptr;
 }
 
-void BaseRoom::setAdjacent(BaseRoom* adjRoom, CardinalDirection dir)
+void BaseRoom::setAdjacent(BaseRoom* adjRoom, CardinalDirection dir, bool twoWay = false)
 {
 	if (dir >= 0 && dir <= 5)
 	{
 		roomConnections[dir] = adjRoom;
+	}
+	if  (twoWay == true)
+	{
+		CardinalDirection oppositeDirection;
+		if (dir%2)
+		{
+			oppositeDirection = static_cast<CardinalDirection>(dir - 1);
+		}
+		else
+		{
+			oppositeDirection = static_cast<CardinalDirection>(dir + 1);
+		}
+		adjRoom->setAdjacent(this, oppositeDirection, false);
 	}
 }
 

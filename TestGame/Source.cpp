@@ -49,8 +49,8 @@ int main()
 	cout << "Literally just type 0 - It's not going to do much but like that's just the way it is. Refining comes later";
 	currentRoom = firstRoom;
 
-	firstRoom->setAdjacent(secondRoom, CardinalDirection::North);
-	secondRoom->setAdjacent(firstRoom, CardinalDirection::South);
+	firstRoom->setAdjacent(secondRoom, CardinalDirection::North, true);
+	//secondRoom->setAdjacent(firstRoom, CardinalDirection::South);
 
 	firstRoom->printName();
 

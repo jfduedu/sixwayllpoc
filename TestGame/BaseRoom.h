@@ -11,7 +11,7 @@ public:
 	BaseRoom();
 	BaseRoom(string name);
 	BaseRoom* checkAdjacent(CardinalDirection dir);
-	void setAdjacent(BaseRoom* adjRoom, CardinalDirection dir);
+	void setAdjacent(BaseRoom* adjRoom, CardinalDirection dir, bool twoWay);
 	void printName();
 private:
 	string roomName;

@@ -9,11 +9,11 @@ class BaseRoom
 {
 public:
 	BaseRoom();
-	BaseRoom(string name);
+	BaseRoom(string description);
 	BaseRoom* checkAdjacent(CardinalDirection dir);
 	void setAdjacent(BaseRoom* adjRoom, CardinalDirection dir);
-	void printName();
+	void printDescription();
 private:
-	string roomName;
+	string roomDescription;
 	BaseRoom* roomConnections[6];
 };

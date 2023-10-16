@@ -8,9 +8,9 @@ BaseRoom::BaseRoom()
 	}
 }
 
-BaseRoom::BaseRoom(string name)
+BaseRoom::BaseRoom(string description)
 {
-	roomName = name;
+	roomDescription = description;
 	
 	for (int i = 0; i < 6; i++)
 	{
@@ -20,7 +20,7 @@ BaseRoom::BaseRoom(string name)
 
 BaseRoom* BaseRoom::checkAdjacent(CardinalDirection dir)
 {
-	if (dir >= 0 && dir<= 0 && roomConnections[dir] != nullptr)
+	if (dir >= 0 && dir<= 5 && roomConnections[dir] != nullptr)
 	{
 		return roomConnections[dir];
 	}
@@ -35,7 +35,8 @@ void BaseRoom::setAdjacent(BaseRoom* adjRoom, CardinalDirection dir)
 	}
 }
 
-void BaseRoom::printName()
+
+void BaseRoom::printDescription()
 {
-	cout << endl << roomName << endl;
+	cout << endl << roomDescription << endl;
 }
